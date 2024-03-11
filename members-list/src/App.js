@@ -1,11 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Members from "./pages/Members";
+import Create from "./pages/Create";
+import Update from "./pages/Update";
 import "bootstrap/dist/css/bootstrap.min.css";
-import MembersList from "./MembersList";
 
 function App() {
   return (
-    <div className="container">
-      <h1>Clubhouse!</h1>
-      <MembersList/>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Members/>}/>
+          <Route path='/create' element={<Create/>}/>
+          <Route path='/update/:id' element={<Update/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
