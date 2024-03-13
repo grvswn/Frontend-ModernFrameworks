@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 
-const dbLink = "https://3000-grvswn-backendmodernfra-hsddfvwx9hi.ws-us110.gitpod.io";
+const dbLink = process.env.REACT_APP_DB_LINK;
 
 const Create=()=> {
   const [member,setMember]=useState({
