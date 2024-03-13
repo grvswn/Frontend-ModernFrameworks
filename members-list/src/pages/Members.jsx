@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
-const dbLink = "https://3000-grvswn-backendmodernfra-hsddfvwx9hi.ws-us108.gitpod.io";
+const dbLink = "https://3000-grvswn-backendmodernfra-hsddfvwx9hi.ws-us110.gitpod.io";
 
 const Members=()=> {
   const [members, setMembers]= useState([]);
@@ -33,7 +33,7 @@ const Members=()=> {
     <div className="container">
       <h1>Clubhous3 Members List</h1>
       <div>
-        {members && members.map && members.map(member=>(
+        {members.map(member=>(
           <div className="mt-2" key={member.id}>
             <h2>{member.username}</h2>
             <p>{member.email}</p>
