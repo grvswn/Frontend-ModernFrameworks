@@ -41,11 +41,6 @@ const Members=()=> {
             <button className='btn btn-outline-danger btn-sm' onClick={()=>handleDelete(member.id)}>Delete</button>
           </div>
         ))}
-        <button className='btn btn-outline-secondary mt-3'>
-        <Link to="/create" >
-        Add new member
-        </Link>
-      </button>
       </div>
     </div>
   );
