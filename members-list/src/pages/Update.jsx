@@ -5,13 +5,17 @@ import {useLocation, useNavigate} from "react-router-dom";
 const dbLink = process.env.REACT_APP_DB_LINK;
 
 const Update=()=> {
-  const [member,setMember]=useState({
-    username:"",
-    email:""
-  });
-
+  
   const navigate=useNavigate();
   const location=useLocation();
+  const memberToEdit = location.state;
+  console.log(memberToEdit.username)
+  console.log(memberToEdit.email)
+
+  const [member,setMember]=useState({
+    username:memberToEdit.username,
+    email:memberToEdit.email
+  });
 
   const memberId = location.pathname.split("/")[2];
 
@@ -32,15 +36,15 @@ const Update=()=> {
   return (
     <div className='container'>
       <h1>Update Member Details</h1>
-      <input
+      <label>New Username</label><input
       type='text'
-      placeholder='Username'
+      placeholder={memberToEdit.username}
       onChange={handleChange}
       name='username'
       />
-      <input
+      <label>New Email</label><input
       type='text'
-      placeholder='Email'
+      placeholder={memberToEdit.email}
       onChange={handleChange}
       name='email'
       />

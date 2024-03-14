@@ -2,11 +2,13 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const dbLink = process.env.REACT_APP_DB_LINK;
 
 const Members=()=> {
   const [members, setMembers]= useState([]);
+  const navigate=useNavigate();
 
   useEffect(()=>{
     const fetchAllMembers= async ()=>{
@@ -37,7 +39,11 @@ const Members=()=> {
           <div className="mt-2" key={member.id}>
             <h2>{member.username}</h2>
             <p>{member.email}</p>
-            <button className='btn btn-outline-secondary btn-sm'><Link to={`/update/${member.id}`}>Update</Link></button>
+            <button className='btn btn-outline-secondary btn-sm' onClick={()=>{
+                        navigate(`/update/${member.id}`, {
+                          state: member
+                      })
+                    }}>Update</button>
             <button className='btn btn-outline-danger btn-sm' onClick={()=>handleDelete(member.id)}>Delete</button>
           </div>
         ))}
