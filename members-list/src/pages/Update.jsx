@@ -9,8 +9,6 @@ const Update=()=> {
   const navigate=useNavigate();
   const location=useLocation();
   const memberToEdit = location.state;
-  console.log(memberToEdit.username)
-  console.log(memberToEdit.email)
 
   const [member,setMember]=useState({
     username:memberToEdit.username,

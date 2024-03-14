@@ -1,7 +1,6 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 
 const dbLink = process.env.REACT_APP_DB_LINK;
