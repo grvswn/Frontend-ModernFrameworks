@@ -33,7 +33,7 @@ const Update=()=> {
 
   return (
     <div className='container'>
-      <h1>Update Member Details</h1>
+      <h1>Updating Member Details for: {memberToEdit.username}</h1>
       <label>New Username</label><input
       type='text'
       placeholder={memberToEdit.username}
